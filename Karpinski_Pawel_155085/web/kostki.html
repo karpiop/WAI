@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pl" lang="pl">
+<head>
+	<meta http-equiv="Content-type" content="application/xhtml+xml; charset=utf-8" />
+	<title>Galeria z podmianą obrazków w jQuery</title>
+ 
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+ 
+	<link rel="stylesheet" href="style.css" type="text/css" />
+ 
+	<script type="text/javascript">
+	    $(function () {
+
+	        $('.miniatury ul li:first-child a img').css('opacity', 0.5);
+
+	        $(".miniatury a").click(function () {
+
+	            $('.miniatury a img').css('opacity', 1);
+	            $(this).children().css('opacity', 0.5);
+
+	            var sciezka = $(this).attr("href");
+	            var tytul = $(this).attr("title");
+
+	            $(".duzy").attr({ src: sciezka, alt: tytul });
+
+	            return false;
+	        });
+
+	    });
+	</script>
+ 
+ 
+	<!--[if lt IE 8]>
+	<script src="http://ie7-js.googlecode.com/svn/version/2.0(beta3)/IE8.js" type="text/javascript"></script>
+	<![endif]-->
+</head>
+<body>
+    <div id="naglowek">
+            <h1>
+                <br />
+                <img src="Logo.svg" style="width:100px; height:100px" alt="logo"/><br />
+                Kostka Rubika
+                <br />
+                </h1>
+        </div>
+    <ul id="menu">
+	    <li><a href="index.php">Start</a></li>
+        <li><a href="e1.html">Jak ułożyć kostkę</a>
+            <ul>
+                <li><a href="e1.html">Etap 1 - biały krzyż</a></li>
+                <li><a href="e2.html">Etap 2 - narożniki białej ściany</a></li>
+                <li><a href="e3.html">Etap 3 - druga warstwa</a></li>
+                <li><a href="e4.html">Etap 4 - żółty krzyż</a></li>
+                <li><a href="e5.html">Etap 5 - permutacja żółtego krzyża</a></li>
+                <li><a href="e6.html">Etap 6 - permutacja narożników</a></li>
+                <li><a href="e7.html">Etap 7 - orientacja narożników</a></li>
+                <li><a href="e8.html">Etap 8 - ostatnia permutacja</a></li>
+            </ul>
+        </li>
+        <li><a href="kostki.html">Różne kostki</a></li>
+        <li><a href="opcje.html">Opcje</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+    </ul>
+	<div id="kontener">
+		
+		<div class="galeria">
+			<img class="duzy" src="kostki/aurora.jpg" alt="Duże zdjęcie Aurora" />
+		</div>
+		
+		<div class="miniatury">
+			<ul>
+				<li><a href="kostki/aurora.jpg" title="Aurora"><img src="kostki/aurora_m.jpg" alt="miniaturka Aurora" /></a></li>
+				<li><a href="kostki/mirror.jpg" title="Mirror"><img src="kostki/mirror_m.jpg" alt="miniaturka Mirror" /></a></li>
+				<li><a href="kostki/megaminx.jpg" title="Megaminx"><img src="kostki/megaminx_m.jpg" alt="miniaturka Megaminx" /></a></li>
+				<li><a href="kostki/4x4.jpg" title="4x4"><img src="kostki/4x4_m.jpg" alt="miniaturka 4x4" /></a></li>
+			</ul>
+		</div>
+		
+	</div>
+	
+</body>
+</html>
